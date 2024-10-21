@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                sh 'pytest tests/'  # Assuming you have a tests folder
+                sh 'pytest tests/'  // Assuming you have a tests folder
             }
         }
         stage('Build Docker Image') {
@@ -29,8 +29,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                // Example for deploying to Kubernetes, AWS, or Google Cloud
-                sh 'kubectl apply -f deployment.yaml'  # Assuming Kubernetes deployment
+                // Add this line to run your deployment script
+                sh 'python deploy.py'  // This will execute your deploy.py script
             }
         }
     }
